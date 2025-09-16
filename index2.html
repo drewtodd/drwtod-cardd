@@ -13,18 +13,16 @@
     :root{--bg:#0b1020;--ink:#f8fafc;--muted:rgba(255,255,255,.85);--glass:rgba(255,255,255,.14);--focus:#93c5fd;--shadow-xl:0 25px 50px rgba(0,0,0,.45);--radius-2xl:2rem}
     *,*::before,*::after{box-sizing:border-box}
     html,body{height:100%}
-    html,body{height:100%}
-    body{display:flex;flex-direction:column;min-height:100vh}
+    body{margin:0;font-family:"Roboto",system-ui,-apple-system,Segoe UI,Inter,"Helvetica Neue",Arial;color:var(--ink);background:var(--bg)}
     main{flex:1}
-    body{margin:0;font-family:"Bebas Neue",system-ui,-apple-system,Segoe UI,Roboto,Inter,"Helvetica Neue",Arial;color:var(--ink);background:var(--bg)}
+    body{display:flex;flex-direction:column;min-height:100vh}
     a{color:inherit}
     .hero-bg{position:fixed;inset:0;z-index:-2;background:#1f2937 url('https://images.unsplash.com/photo-1757330878011-418ff67dd845?q=80&w=1065&auto=format&fit=crop') center/cover no-repeat;filter:blur(4px);transform:scale(1.03)}
-    /* .hero-bg{position:fixed;inset:0;z-index:-2;background:#1f2937 url('IMG_stage.jpeg') center/cover no-repeat;filter:blur(4px);transform:scale(1)} */
     .hero-scrim{position:fixed;inset:0;z-index:-1;background:radial-gradient(1200px 60% at 25% 35%,rgba(0,0,0,.25),rgba(0,0,0,.65)),repeating-linear-gradient(60deg,rgba(255,255,255,.06) 0 2px,transparent 2px 80px)}
     .skip{position:absolute;left:-9999px;top:0}
     .skip:focus{left:1rem;top:1rem;background:#fff;color:#000;padding:.5rem .75rem;border-radius:.5rem;outline:none;box-shadow:0 0 0 3px var(--focus)}
     .wrap{display:flex;align-items:flex-start;justify-content:center;padding:clamp(1rem,3vw,2rem);padding-top:8vh}
-    .card{max-width:64rem;width:100%;text-align:center;transform:translateY(40%)}
+    .card{max-width:64rem;width:100%;text-align:center;transform:translateY(50%)}
     .intro{max-width:40rem;margin-inline:auto}
     .avatar-wrapper{position:relative;width:88px;height:88px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,.8);box-shadow:0 0 0 3px rgba(0,0,0,.25);margin-inline:auto}
     .avatar-wrapper::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:url('IMG_0091.jpeg') center/cover no-repeat;border-radius:50%;opacity:0;transition:opacity .3s ease}
@@ -35,12 +33,13 @@
     .avatar-wrapper.swap .avatar{opacity:0}
     .avatar-wrapper.swap::after{opacity:1}
     .avatar{transition:opacity .3s ease;position:relative;z-index:1;width:100%;height:100%;object-fit:cover;transform:scale(1.75) translateY(21%);border-radius:50%}
-    h1{margin:.75rem 0 0;font-size:clamp(6rem,4vw + .5rem,4rem);font-weight:700;letter-spacing:.02em;}
-    .lead{margin:0 0 1.25rem;color:var(--muted);max-width:52ch;margin-inline:auto;font-size:1.5rem;font-style:italic;font-family:"Libre Baskerville",serif;}
-        .actions{display:flex;align-items:center;justify-content:center;gap:.75rem;flex-wrap:wrap;padding:.8rem;border-radius:var(--radius-2xl);background:var(--glass);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.25);box-shadow:var(--shadow-xl);max-width:100%;width:fit-content;margin-inline:auto;border-radius:999px;}
+    h1{margin:.75rem 0 0;font-family:"Bebas Neue",Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:clamp(2.5rem,8vw,6rem);font-weight:700;letter-spacing:.02em}
+    .lead{margin:0 0 1.25rem;color:var(--muted);max-width:52ch;margin-inline:auto;font-size:1.25rem;font-style:italic;font-family:"Playfair Display","Libre Baskerville","Roboto Serif",serif}
+        .actions{display:flex;align-items:center;justify-content:center;gap:.75rem;flex-wrap:wrap;padding:.8rem 1.25rem;background:var(--glass);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.25);box-shadow:var(--shadow-xl);width:fit-content;max-width:100%;margin-inline:auto;border-radius:999px}
     .cta{display:inline-flex;align-items:center;justify-content:space-between;gap:.75rem;min-width:6rem;padding:.9rem 1.25rem;border-radius:999px;text-decoration:none;font-weight:600;background:#fff;color:#0b1020;border:2px solid transparent}
     .cta:hover{filter:brightness(.98)}
     .cta:focus{outline:none;box-shadow:0 0 0 3px #fff,0 0 0 6px rgba(255,255,255,.5)}
+    .cta:focus-visible,.icon-btn:focus-visible{outline:3px solid #2563eb;outline-offset:3px;box-shadow:none}
     .icon-btn{--size:52px;width:var(--size);height:var(--size);display:inline-flex;align-items:center;justify-content:center;border-radius:999px;text-decoration:none;background:rgba(255,255,255,.92);color:#111;border:1.5px solid rgba(0,0,0,.1);font-size:1.25rem}
     .icon-btn:hover{background:#fff}
     .icon-btn:focus{outline:none;box-shadow:0 0 0 3px var(--focus)}
@@ -55,6 +54,7 @@
     footer a{color:rgba(255,255,255,.85);text-decoration:underline}
     .credit{display:block;margin-top:.25rem;font-size:0.9em;color:rgba(255,255,255,.7)}
     .sepia{filter:sepia(30%) saturate(100%) hue-rotate(10deg)}
+    .bio{padding:1rem 0;font-family:"Libre Baskerville",serif;font-size:.95rem;text-align:left;letter-spacing:-.0375rem}
   </style>
 </head>
 <body>
@@ -71,21 +71,15 @@
         </div>
         <h1 id="name">Drew Todd</h1>
         <p class="lead">Mostly better than average...</p>
-        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
 
         <div class="actions" role="group" aria-label="Primary actions">
           <a class="cta" href="#work">Test your luck! <span aria-hidden>→</span></a>
 
           <a class="icon-btn" href="tel:+9492883739" aria-label="Call me"><i class="fas fa-phone"></i></a>
-          <a class="icon-btn" href="sms:+9492883739" aria-label="Text me" alt="Text me"><i class="fas fa-comment-dots"></i></a>
+          <a class="icon-btn" href="sms:+9492883739" aria-label="Text me"><i class="fas fa-comment-dots"></i></a>
           <a class="icon-btn" href="mailto:drew@drewtodd.com" aria-label="Email me"><i class="fas fa-envelope"></i></a>
-          <!-- <a class="icon-btn" href="https://www.facebook.com/drwtod/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-          <a class="icon-btn" href="https://instagram.com/drewtodd" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a class="icon-btn" href="https://threads.net/drewtodd" target="_blank" rel="noopener" aria-label="Threads"><i class="fab fa-threads"></i></a> -->
-          <!-- <a class="icon-btn" href="https://www.linkedin.com/in/andrewtodd" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a> -->
-          <!-- <a class="icon-btn" href="https://github.com/drewtodd" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a> -->
         </div>
-  <p style="padding: 1rem 0;font-family:'Libre Baskerville',serif;font-size:.95rem;text-align:left;letter-spacing:-.0375rem;"><em>Who</em>, you ask? Just a south-county musician, guitar picker, and blues nerd. Hit the buttons above if you want to yap about the same. Or maybe hire me for a gig. Or whatever.</p>      
+        <p class="bio"><em>Who</em>, you ask? Just a south-county musician, guitar picker, and blues nerd. Hit the buttons above if you want to yap about the same. Or maybe hire me for a gig. Or whatever.</p>      
       </div>
     </section>
   </main>
